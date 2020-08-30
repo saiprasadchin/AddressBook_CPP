@@ -1,5 +1,5 @@
 #include<iostream>
-
+#include "Person.h"
 using namespace std;
 
 void displayWelcomeMessage() {
@@ -7,6 +7,9 @@ void displayWelcomeMessage() {
 }
 
 int main() {
+
     displayWelcomeMessage();
+    Person person("saiprasad", "chindam","Mumbai", "Maha", 123456, 8080707195);
+    person.display();
     return 0;
 }
