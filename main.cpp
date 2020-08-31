@@ -6,12 +6,13 @@ using namespace std;
 AddressBook addressBook;
 UserInputOutput userInputOutput;
 
-void displayWelcomeMessage() {
+void displayWelcomeMessage()
+{
     cout << "Welcome to Address Book Program" << endl;
 }
 
-void selectChoice() {
-
+void selectChoice()
+{
     bool endKey = true;
     while (endKey)
     {
@@ -29,6 +30,19 @@ void selectChoice() {
                 }
                 break;
             case 2:
+                Person* personEdit;
+                personEdit = userInputOutput.getPersonName();
+                    if ( addressBook.findByFirstNameAndLastName( personEdit ) == 0) {
+                        cout << "\nNo Data Found\n";
+                    } else {
+                        userInputOutput.getPersonDetails( personEdit );
+                        addressBook.editPerson( personEdit );
+                    }
+                break;
+            case 3:
+                addressBook.display();
+                break;
+            case 4:
                 endKey = false;
                 break;
             default:
@@ -38,8 +52,8 @@ void selectChoice() {
     }
 }
 
-int main() {
-
+int main()
+{
     displayWelcomeMessage();
     selectChoice();
     return 0;

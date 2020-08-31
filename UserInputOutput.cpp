@@ -1,13 +1,15 @@
 #include "UserInputOutput.h"
 
-int UserInputOutput::getUserChoice() {
+int UserInputOutput::getUserChoice()
+{
     int choice = 0;
-    cout << "\n1) ADD \n2) EXIT : ";
+    cout << "\n1) ADD \n2) EDIT \n3) DISPALY \n4) EXIT : ";
     cin >> choice;
     return choice;
 }
 
-Person* UserInputOutput::getPersonName() {
+Person* UserInputOutput::getPersonName()
+{
     Person* person = new Person();
     cout <<"\nEnter the First Name : ";
     cin >> person->firstName;
@@ -16,7 +18,8 @@ Person* UserInputOutput::getPersonName() {
     return person;
 }
 
-Person* UserInputOutput::getPersonDetails( Person* person ) {
+Person* UserInputOutput::getPersonDetails( Person* person )
+{
     cout << "\nEnter the City : ";
     cin >> person->city;
     cout << "\nEnter the State : ";
