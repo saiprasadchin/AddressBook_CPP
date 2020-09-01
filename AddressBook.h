@@ -1,13 +1,14 @@
 #pragma
 #include "Person.h"
-#include<vector>
+#include<list>
 
 class AddressBook
 {
 public:
-    vector<Person*> personList;
+    list<Person*> personList;
     void addPerson( Person* );
     int findByFirstNameAndLastName( Person* );
     void editPerson( Person* );
     void display();
+    int deletePerson( Person* );
 };

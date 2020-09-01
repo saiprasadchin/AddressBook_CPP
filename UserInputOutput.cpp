@@ -3,7 +3,7 @@
 int UserInputOutput::getUserChoice()
 {
     int choice = 0;
-    cout << "\n1) ADD \n2) EDIT \n3) DISPALY \n4) EXIT : ";
+    cout << "\n1) ADD \n2) EDIT \n3) DISPALY \n4) DELETE \n5) EXIT : ";
     cin >> choice;
     return choice;
 }
