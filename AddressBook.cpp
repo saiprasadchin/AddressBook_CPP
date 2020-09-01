@@ -119,3 +119,25 @@ void AddressBook::displayByCityAndState( Person * person )
         }
     }
 }
+
+void AddressBook::displayByCity( string cityName )
+{
+    for (auto listPtr = personList.begin(); listPtr != personList.end(); listPtr++ )
+    {
+        if( (*listPtr)->getCity() == cityName )
+        {
+            (*listPtr)->display();
+        }
+    }
+}
+
+void AddressBook::displayByState( string stateName )
+{
+    for (auto listPtr = personList.begin(); listPtr != personList.end(); listPtr++ )
+    {
+        if( (*listPtr)->getState() == stateName )
+        {
+            (*listPtr)->display();
+        }
+    }
+}

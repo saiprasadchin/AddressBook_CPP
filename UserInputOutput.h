@@ -11,4 +11,6 @@ public:
     Person* getPersonDetails( Person* );
     int getUserChoiceForSort();
     Person* getCityAndState();
+    string getUserChoiceForCity();
+    string getUserChoiceForState();
 };

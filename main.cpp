@@ -1,4 +1,5 @@
 #include<iostream>
+#include <string>
 #include "UserInputOutput.h"
 
 using namespace std;
@@ -33,6 +34,7 @@ void selectSortByCityStateZip()
 
 void selectChoice()
 {
+    string cityName, stateName;
     bool endKey = true;
     while (endKey)
     {
@@ -87,6 +89,14 @@ void selectChoice()
                 delete personCityAnsStatePtr;
                 break;
             case 8:
+                cityName = userInputOutput.getUserChoiceForCity();
+                addressBook.displayByCity( cityName );
+                break;
+            case 9:
+                stateName = userInputOutput.getUserChoiceForState();
+                addressBook.displayByState( stateName );
+                break;
+            case 10:
                 endKey = false;
                 break;
             default:

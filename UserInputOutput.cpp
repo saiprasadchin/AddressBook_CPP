@@ -1,10 +1,12 @@
 #include "UserInputOutput.h"
 
+using namespace std;
+
 int UserInputOutput::getUserChoice()
 {
     int choice = 0;
     cout <<"\n==========================\n";
-    cout << "\n1) ADD \n2) EDIT \n3) DISPALY \n4) DELETE \n5) SORTBYNAME \n6) SORT BY ( City, State, Zip ) \n7) VIEW BY CITY AND STATE \n8) EXIT : ";
+    cout << "\n1) ADD \n2) EDIT \n3) DISPALY \n4) DELETE \n5) SORTBYNAME \n6) SORT BY ( City, State, Zip ) \n7) VIEW BY CITY AND STATE \n8) VIEW BY CITY \n9) VIEW BY STATE \n10) EXIT : ";
     cin >> choice;
     return choice;
 }
@@ -62,4 +64,20 @@ Person* UserInputOutput::getCityAndState()
     person->setCity(city);
     person->setState(state);
     return person;
+}
+
+string UserInputOutput::getUserChoiceForCity()
+{
+    string city;
+    cout <<"\nEnter the City : ";
+    cin >> city;
+    return city;
+}
+
+string UserInputOutput::getUserChoiceForState()
+{
+    string state;
+    cout <<"\nEnter the State : ";
+    cin >> state;
+    return state;
 }
