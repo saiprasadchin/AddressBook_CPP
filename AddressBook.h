@@ -11,4 +11,5 @@ public:
     void editPerson( Person* );
     void display();
     int deletePerson( Person* );
+    void sortByName();
 };

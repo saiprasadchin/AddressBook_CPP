@@ -8,7 +8,7 @@ UserInputOutput userInputOutput;
 
 void displayWelcomeMessage()
 {
-    cout << "Welcome to Address Book Program" << endl;
+    cout << "\nWelcome to Address Book Program\n";
 }
 
 void selectChoice()
@@ -55,6 +55,10 @@ void selectChoice()
                 delete personDelete;
                 break;
             case 5:
+                addressBook.sortByName();
+                addressBook.display();
+                break;
+            case 6:
                 endKey = false;
                 break;
             default:

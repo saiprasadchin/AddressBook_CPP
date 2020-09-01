@@ -1,5 +1,6 @@
 #include "AddressBook.h"
 #include <iostream>
+#include <algorithm>
 
 void AddressBook::addPerson( Person* personPtr )
 {
@@ -10,7 +11,7 @@ int AddressBook::findByFirstNameAndLastName( Person* personPtr )
 {
     int count = 0;
     for (auto listPtr = personList.begin(); listPtr != personList.end(); ++listPtr) {
-        if( (*listPtr)->firstName == personPtr->firstName && (*listPtr)->lastName == personPtr->lastName ) {
+        if( (*listPtr)->getFirstName() == personPtr->getFirstName() && (*listPtr)->getlastName() == personPtr->getlastName() ) {
             count = 1;
             return count;
         }
@@ -21,12 +22,12 @@ int AddressBook::findByFirstNameAndLastName( Person* personPtr )
 void AddressBook::editPerson(Person* person)
 {
     for (auto listPtr = personList.begin(); listPtr != personList.end(); ++listPtr) {
-        if( (*listPtr)->firstName == person->firstName && (*listPtr)->lastName == person->lastName )
+        if( (*listPtr)->getFirstName() == person->getFirstName() && (*listPtr)->getlastName() == person->getlastName() )
         {
-            (*listPtr)->city = person->city;
-            (*listPtr)->state = person->state;
-            (*listPtr)->zip = person->zip;
-            (*listPtr)->phoneNumber = person->phoneNumber;
+            (*listPtr)->setCity( person->getCity() );
+            (*listPtr)->setState( person->getState() );
+            (*listPtr)->setZipcode( person->getZipcode() );
+            (*listPtr)->setPhoneNumber( person->getPhoneNumber() );
         }
     }
 }
@@ -43,7 +44,7 @@ int AddressBook::deletePerson( Person* person )
     int count = 0;
     for (auto listPtr = personList.begin(); listPtr != personList.end(); listPtr++ )
     {
-        if( (*listPtr)->firstName == person->firstName && (*listPtr)->lastName == person->lastName )
+        if( (*listPtr)->getFirstName() == person->getFirstName() && (*listPtr)->getlastName() == person->getlastName() )
         {
             personList.remove( *listPtr );
             delete *listPtr;
@@ -52,4 +53,17 @@ int AddressBook::deletePerson( Person* person )
         }
     }
     return count;
+}
+
+struct compareByNames
+{
+    bool operator()(Person *toCompare, Person *toCompareWith)
+    {
+        return toCompare->getFirstName() < toCompareWith->getFirstName();
+    }
+};
+
+void AddressBook::sortByName()
+{
+    personList.sort(compareByNames());
 }

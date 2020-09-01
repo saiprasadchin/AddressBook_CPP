@@ -1,18 +1,69 @@
 #include "Person.h"
 
-Person::Person(string fName, string lName, string city, string state, int zip, long long phone) {
-    this->firstName = fName;
-    this->lastName = lName;
-    this->city = city;
-    this->state = state;
-    this->zip = zip;
-    this->phoneNumber = phone;
+void Person::display() {
+    cout <<"\n==========================\n";
+    cout << "\nName     : " << this->firstName << " " << this->lastName;
+    cout << "\nCity     : " << this->city;
+    cout << "\nState    : " << this->state;
+    cout << "\nZipCode  : " << this->zip;
+    cout << "\nPhone    : " << this->phoneNumber;
 }
 
-void Person::display() {
-    cout << "Name     : " << this->firstName << " " << this->lastName << endl;
-    cout << "City     : " << this->city << endl;
-    cout << "State    : " << this->state << endl;
-    cout << "ZipCode  : " << this->zip << endl;
-    cout << "Phone    : " << this->phoneNumber << endl;
+string Person::getFirstName()
+{
+    return this->firstName;
+}
+
+string Person::getlastName()
+{
+    return this->lastName;
+}
+
+string Person::getCity()
+{
+    return this->city;
+}
+
+string Person::getState()
+{
+    return this->state;
+}
+
+int Person::getZipcode()
+{
+    return this->zip;
+}
+
+long long Person::getPhoneNumber()
+{
+    return this->phoneNumber;
+}
+
+void Person::setFirstName( string firstName )
+{
+    this->firstName = firstName;
+}
+
+void Person::setLastName( string lastName )
+{
+    this->lastName = lastName;
+}
+void Person::setCity(string city)
+{
+    this->city = city;
+}
+
+void Person::setState(string state)
+{
+    this->state = state;
+}
+
+void Person::setZipcode(int zipCode)
+{
+    this->zip = zipCode;
+}
+
+void Person::setPhoneNumber(long long phoneNumber)
+{
+    this->phoneNumber = phoneNumber;
 }

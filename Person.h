@@ -2,16 +2,26 @@
 #include<iostream>
 using namespace std;
 class Person {
-public:
     string firstName;
     string lastName;
     string city;
     string state;
     int zip;
     long long phoneNumber;
+public:
     Person() {
-
     }
-    Person(std::string fName, std::string lName, std::string city, std::string state, int zip, long long phone);
+    string getFirstName();
+    string getlastName();
+    string getCity();
+    string getState();
+    int getZipcode();
+    long long getPhoneNumber();
     void display();
+    void setFirstName( string firstName );
+    void setLastName( string lastName );
+    void setCity( string city );
+    void setState( string state );
+    void setZipcode( int zip_code );
+    void setPhoneNumber( long long phone_number );
 };
