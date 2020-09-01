@@ -81,6 +81,12 @@ void selectChoice()
                 selectSortByCityStateZip();
                 break;
             case 7:
+                Person* personCityAnsStatePtr;
+                personCityAnsStatePtr = userInputOutput.getCityAndState();
+                addressBook.displayByCityAndState( personCityAnsStatePtr );
+                delete personCityAnsStatePtr;
+                break;
+            case 8:
                 endKey = false;
                 break;
             default:

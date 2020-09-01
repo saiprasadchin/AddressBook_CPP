@@ -4,7 +4,7 @@ int UserInputOutput::getUserChoice()
 {
     int choice = 0;
     cout <<"\n==========================\n";
-    cout << "\n1) ADD \n2) EDIT \n3) DISPALY \n4) DELETE \n5) SORTBYNAME \n6) SORT BY ( City, State, Zip ) \n7) EXIT : ";
+    cout << "\n1) ADD \n2) EDIT \n3) DISPALY \n4) DELETE \n5) SORTBYNAME \n6) SORT BY ( City, State, Zip ) \n7) VIEW BY CITY AND STATE \n8) EXIT : ";
     cin >> choice;
     return choice;
 }
@@ -49,4 +49,17 @@ int UserInputOutput::getUserChoiceForSort()
     cout << "\n1) SORT BY CITY \n2) SORT BY STATE \n3) SORT BY ZIP   : ";
     cin >> choice;
     return choice;   
+}
+
+Person* UserInputOutput::getCityAndState()
+{
+    Person* person = new Person();
+    string city, state;
+    cout <<"Enter the City\n";
+    cin >> city;
+    cout <<"Enter the State\n";
+    cin >> state;
+    person->setCity(city);
+    person->setState(state);
+    return person;
 }

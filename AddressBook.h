@@ -15,4 +15,5 @@ public:
     void sortByCity();
     void sortByState();
     void sortByZipCode();
+    void displayByCityAndState( Person* );
 };

@@ -108,3 +108,14 @@ void AddressBook::sortByZipCode()
 {
     personList.sort(compareByZipCode());
 }
+
+void AddressBook::displayByCityAndState( Person * person )
+{
+    for (auto listPtr = personList.begin(); listPtr != personList.end(); listPtr++ )
+    {
+        if( (*listPtr)->getCity() == person->getCity() && (*listPtr)->getState() == person->getState() )
+        {
+            (*listPtr)->display();
+        }
+    }
+}
