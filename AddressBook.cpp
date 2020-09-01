@@ -37,3 +37,19 @@ void AddressBook::display()
         (*listPtr)->display();
     }
 }
+
+int AddressBook::deletePerson( Person* person )
+{
+    int count = 0;
+    for (auto listPtr = personList.begin(); listPtr != personList.end(); listPtr++ )
+    {
+        if( (*listPtr)->firstName == person->firstName && (*listPtr)->lastName == person->lastName )
+        {
+            personList.remove( *listPtr );
+            delete *listPtr;
+            count = 1;
+            return count;
+        }
+    }
+    return count;
+}

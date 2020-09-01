@@ -10,7 +10,7 @@ public:
     int zip;
     long long phoneNumber;
     Person() {
-        
+
     }
     Person(std::string fName, std::string lName, std::string city, std::string state, int zip, long long phone);
     void display();
