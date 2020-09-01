@@ -10,6 +10,26 @@ void displayWelcomeMessage()
 {
     cout << "\nWelcome to Address Book Program\n";
 }
+void selectSortByCityStateZip()
+{
+    int choice = userInputOutput.getUserChoiceForSort();
+    switch (choice)
+    {
+        case 1:
+            addressBook.sortByCity();
+            break;
+        case 2:
+            addressBook.sortByState();
+            break;
+        case 3:
+            addressBook.sortByZipCode();
+            break;
+        default:
+            cout << "Invalid Input" << endl;
+            break;
+    }
+    addressBook.display();
+}
 
 void selectChoice()
 {
@@ -56,9 +76,11 @@ void selectChoice()
                 break;
             case 5:
                 addressBook.sortByName();
-                addressBook.display();
                 break;
             case 6:
+                selectSortByCityStateZip();
+                break;
+            case 7:
                 endKey = false;
                 break;
             default:

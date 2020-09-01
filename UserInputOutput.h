@@ -9,4 +9,5 @@ public:
     int getUserChoice();
     Person* getPersonName();
     Person* getPersonDetails( Person* );
+    int getUserChoiceForSort();
 };

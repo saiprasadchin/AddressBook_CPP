@@ -4,7 +4,7 @@ int UserInputOutput::getUserChoice()
 {
     int choice = 0;
     cout <<"\n==========================\n";
-    cout << "\n1) ADD \n2) EDIT \n3) DISPALY \n4) DELETE \n5) SORTBYNAME \n6) EXIT : ";
+    cout << "\n1) ADD \n2) EDIT \n3) DISPALY \n4) DELETE \n5) SORTBYNAME \n6) SORT BY ( City, State, Zip ) \n7) EXIT : ";
     cin >> choice;
     return choice;
 }
@@ -40,4 +40,13 @@ Person* UserInputOutput::getPersonDetails( Person* person )
     person->setZipcode( zipCode );
     person->setPhoneNumber( phoneNumber );
     return person;
+}
+
+int UserInputOutput::getUserChoiceForSort()
+{
+    int choice = 0;
+    cout <<"\n==========================\n";
+    cout << "\n1) SORT BY CITY \n2) SORT BY STATE \n3) SORT BY ZIP   : ";
+    cin >> choice;
+    return choice;   
 }

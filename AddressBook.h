@@ -12,4 +12,7 @@ public:
     void display();
     int deletePerson( Person* );
     void sortByName();
+    void sortByCity();
+    void sortByState();
+    void sortByZipCode();
 };

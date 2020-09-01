@@ -63,7 +63,48 @@ struct compareByNames
     }
 };
 
+struct compareByCity
+{
+    bool operator()(Person *toCompare, Person *toCompareWith)
+    {
+        return toCompare->getCity() < toCompareWith->getCity();
+    }
+};
+
+struct compareByState
+{
+    bool operator()(Person *toCompare, Person *toCompareWith)
+    {
+        return toCompare->getState() < toCompareWith->getState();
+    }
+};
+
+struct compareByZipCode
+{
+
+    bool operator()(Person *toCompare, Person *toCompareWith)
+    {
+        return toCompare->getZipcode() < toCompareWith->getZipcode();
+    }
+};
+
 void AddressBook::sortByName()
 {
     personList.sort(compareByNames());
+    display();
+}
+
+void AddressBook::sortByCity()
+{
+   personList.sort(compareByCity());
+}
+
+void AddressBook::sortByState()
+{
+    personList.sort(compareByState());
+}
+
+void AddressBook::sortByZipCode()
+{
+    personList.sort(compareByZipCode());
 }
