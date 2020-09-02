@@ -11,24 +11,30 @@ int UserInputOutput::getUserChoice()
     return choice;
 }
 
-Person* UserInputOutput::getPersonName()
+string UserInputOutput::getFirstName()
 {
-    string firstName, lastName;
-    Person* person = new Person();
+    string firstName;
     cout <<"\nEnter the First Name : ";
     cin >> firstName;
-    cout <<"\nEnter the Last Name : ";
-    cin >> lastName;
-    person->setFirstName( firstName );
-    person->setLastName( lastName );
-    return person;
+    return firstName;
 }
 
-Person* UserInputOutput::getPersonDetails( Person* person )
+string UserInputOutput::getLastName()
+{
+    string lastName;
+    cout <<"\nEnter the Last Name : ";
+    cin >> lastName;
+    return lastName;
+}
+
+Person* UserInputOutput::getPersonDetails( string firstName, string lastName )
 {
     string cityName, stateName;
     int zipCode;
     long long phoneNumber;
+    Person* person = new Person();
+    person->setFirstName( firstName );
+    person->setLastName( lastName );
     cout << "\nEnter the City : ";
     cin >> cityName;
     cout << "\nEnter the State : ";

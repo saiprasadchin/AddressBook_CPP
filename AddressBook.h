@@ -7,10 +7,10 @@ class AddressBook
 public:
     list<Person*> personList;
     void addPerson( Person* );
-    int findByFirstNameAndLastName( Person* );
+    int findByFirstNameAndLastName( string, string );
     void editPerson( Person* );
     void display();
-    int deletePerson( Person* );
+    int deletePerson( string, string );
     void sortByName();
     void sortByCity();
     void sortByState();

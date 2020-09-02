@@ -7,11 +7,11 @@ void AddressBook::addPerson( Person* personPtr )
     personList.push_back( personPtr );
 }
 
-int AddressBook::findByFirstNameAndLastName( Person* personPtr )
+int AddressBook::findByFirstNameAndLastName( string firstName, string lastName )
 {
     int count = 0;
-    for (auto listPtr = personList.begin(); listPtr != personList.end(); ++listPtr) {
-        if( (*listPtr)->getFirstName() == personPtr->getFirstName() && (*listPtr)->getlastName() == personPtr->getlastName() ) {
+    for (auto personListPtr = personList.begin(); personListPtr != personList.end(); ++personListPtr) {
+        if( (*personListPtr)->getFirstName() == firstName && (*personListPtr)->getlastName() == lastName ) {
             count = 1;
             return count;
         }
@@ -21,33 +21,33 @@ int AddressBook::findByFirstNameAndLastName( Person* personPtr )
 
 void AddressBook::editPerson(Person* person)
 {
-    for (auto listPtr = personList.begin(); listPtr != personList.end(); ++listPtr) {
-        if( (*listPtr)->getFirstName() == person->getFirstName() && (*listPtr)->getlastName() == person->getlastName() )
+    for (auto personListPtr = personList.begin(); personListPtr != personList.end(); ++personListPtr) {
+        if( (*personListPtr)->getFirstName() == person->getFirstName() && (*personListPtr)->getlastName() == person->getlastName() )
         {
-            (*listPtr)->setCity( person->getCity() );
-            (*listPtr)->setState( person->getState() );
-            (*listPtr)->setZipcode( person->getZipcode() );
-            (*listPtr)->setPhoneNumber( person->getPhoneNumber() );
+            (*personListPtr)->setCity( person->getCity() );
+            (*personListPtr)->setState( person->getState() );
+            (*personListPtr)->setZipcode( person->getZipcode() );
+            (*personListPtr)->setPhoneNumber( person->getPhoneNumber() );
         }
     }
 }
 
 void AddressBook::display()
 {
-    for (auto listPtr = personList.begin(); listPtr != personList.end(); ++listPtr) {
-        (*listPtr)->display();
+    for (auto personListPtr = personList.begin(); personListPtr != personList.end(); ++personListPtr) {
+        (*personListPtr)->display();
     }
 }
 
-int AddressBook::deletePerson( Person* person )
+int AddressBook::deletePerson( string firstName, string lastName )
 {
     int count = 0;
-    for (auto listPtr = personList.begin(); listPtr != personList.end(); listPtr++ )
+    for (auto listPersonPtr = personList.begin(); listPersonPtr != personList.end(); listPersonPtr++ )
     {
-        if( (*listPtr)->getFirstName() == person->getFirstName() && (*listPtr)->getlastName() == person->getlastName() )
+        if( (*listPersonPtr)->getFirstName() == firstName && (*listPersonPtr)->getlastName() == lastName )
         {
-            personList.remove( *listPtr );
-            delete *listPtr;
+            personList.remove( *listPersonPtr );
+            delete *listPersonPtr;
             count = 1;
             return count;
         }
@@ -111,33 +111,33 @@ void AddressBook::sortByZipCode()
 
 void AddressBook::displayByCityAndState( Person * person )
 {
-    for (auto listPtr = personList.begin(); listPtr != personList.end(); listPtr++ )
+    for (auto personListPtr = personList.begin(); personListPtr != personList.end(); personListPtr++ )
     {
-        if( (*listPtr)->getCity() == person->getCity() && (*listPtr)->getState() == person->getState() )
+        if( (*personListPtr)->getCity() == person->getCity() && (*personListPtr)->getState() == person->getState() )
         {
-            (*listPtr)->display();
+            (*personListPtr)->display();
         }
     }
 }
 
 void AddressBook::displayByCity( string cityName )
 {
-    for (auto listPtr = personList.begin(); listPtr != personList.end(); listPtr++ )
+    for (auto personListPtr = personList.begin(); personListPtr != personList.end(); personListPtr++ )
     {
-        if( (*listPtr)->getCity() == cityName )
+        if( (*personListPtr)->getCity() == cityName )
         {
-            (*listPtr)->display();
+            (*personListPtr)->display();
         }
     }
 }
 
 void AddressBook::displayByState( string stateName )
 {
-    for (auto listPtr = personList.begin(); listPtr != personList.end(); listPtr++ )
+    for (auto personListPtr = personList.begin(); personListPtr != personList.end(); personListPtr++ )
     {
-        if( (*listPtr)->getState() == stateName )
+        if( (*personListPtr)->getState() == stateName )
         {
-            (*listPtr)->display();
+            (*personListPtr)->display();
         }
     }
 }

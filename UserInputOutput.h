@@ -7,8 +7,9 @@ using namespace std;
 class UserInputOutput {
 public:
     int getUserChoice();
-    Person* getPersonName();
-    Person* getPersonDetails( Person* );
+    string getFirstName();
+    string getLastName();
+    Person* getPersonDetails( string, string );
     int getUserChoiceForSort();
     Person* getCityAndState();
     string getUserChoiceForCity();
